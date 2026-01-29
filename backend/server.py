@@ -2,6 +2,7 @@ from fastapi import FastAPI, APIRouter, HTTPException, WebSocket, WebSocketDisco
 from fastapi.responses import StreamingResponse, HTMLResponse
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
+from starlette.websockets import WebSocketState
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
@@ -12,11 +13,13 @@ import signal
 import asyncio
 import httpx
 import websockets
+from websockets.exceptions import ConnectionClosed
 from pathlib import Path
 from pydantic import BaseModel, Field, ConfigDict
 from typing import List, Optional
 import uuid
 from datetime import datetime, timezone
+import re
 
 
 ROOT_DIR = Path(__file__).parent
