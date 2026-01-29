@@ -320,7 +320,7 @@ def main():
     tester.test_moltbot_status_with_auth(owner_token)
     
     print("\n--- Moltbot Start Validation Tests ---")
-    tester.test_moltbot_start_validation()
+    tester.test_moltbot_start_validation(owner_token)
     
     print("\n--- Legacy Endpoints Tests ---")
     tester.test_legacy_status_endpoints()
