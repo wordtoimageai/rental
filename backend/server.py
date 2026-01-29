@@ -160,7 +160,7 @@ async def start_gateway_process(api_key: str, provider: str):
     logger.info(f"Starting Moltbot gateway on port {MOLTBOT_PORT}...")
     
     process = subprocess.Popen(
-        ["clawdbot", "gateway", "--port", str(MOLTBOT_PORT), "--bind", "any", "--allow-unconfigured"],
+        ["clawdbot", "gateway", "--port", str(MOLTBOT_PORT), "--bind", "lan", "--allow-unconfigured"],
         env=env,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
