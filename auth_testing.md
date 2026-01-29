@@ -28,11 +28,11 @@ print('User ID: ' + userId);
 ## Step 2: Test Backend API
 ```bash
 # Test auth endpoint
-curl -X GET "https://quickmolt.preview.emergentagent.com/api/auth/me" \
+curl -X GET "https://hungry-kapitsa.preview.emergent.test/api/auth/me" \
   -H "Authorization: Bearer YOUR_SESSION_TOKEN"
 
 # Test protected endpoints
-curl -X GET "https://quickmolt.preview.emergentagent.com/api/moltbot/status" \
+curl -X GET "https://hungry-kapitsa.preview.emergent.test/api/moltbot/status" \
   -H "Authorization: Bearer YOUR_SESSION_TOKEN"
 ```
 
@@ -42,13 +42,13 @@ curl -X GET "https://quickmolt.preview.emergentagent.com/api/moltbot/status" \
 await page.context.add_cookies([{
     "name": "session_token",
     "value": "YOUR_SESSION_TOKEN",
-    "domain": "quickmolt.preview.emergentagent.com",
+    "domain": "hungry-kapitsa.preview.emergent.test",
     "path": "/",
     "httpOnly": true,
     "secure": true,
     "sameSite": "None"
 }]);
-await page.goto("https://quickmolt.preview.emergentagent.com");
+await page.goto("https://hungry-kapitsa.preview.emergent.test");
 ```
 
 ## Quick Debug
