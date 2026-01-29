@@ -9,11 +9,11 @@
   },
   {
     "content": "Phase 1: Create POC test script to verify Moltbot can start and serve UI",
-    "status": "in_progress"
+    "status": "completed"
   },
   {
     "content": "Phase 1: Implement reverse proxy (HTTP + WebSocket) in backend",
-    "status": "pending"
+    "status": "in_progress"
   },
   {
     "content": "Phase 1: Verify POC - Moltbot UI loads through proxy",
