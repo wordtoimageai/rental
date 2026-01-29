@@ -2,8 +2,9 @@
 
 ## Step 1: Create Test User & Session
 ```bash
-mongosh --eval "
-use('moltbot_app');
+# NOTE: Check DB_NAME in /app/backend/.env - usually 'test_database'
+mongosh "mongodb://localhost:27017" --eval "
+use('test_database');
 var userId = 'test-user-' + Date.now();
 var sessionToken = 'test_session_' + Date.now();
 db.users.insertOne({
