@@ -1,38 +1,26 @@
 [
   {
-    "content": "Phase 1: Install Node.js 22+ and verify installation",
-    "status": "completed"
+    "content": "Phase 3: Add Emergent Google Auth to protect Moltbot configuration",
+    "status": "in_progress"
   },
   {
-    "content": "Phase 1: Install Moltbot globally via npm/installer",
-    "status": "completed"
+    "content": "Phase 3: Create user model and session management in MongoDB",
+    "status": "pending"
   },
   {
-    "content": "Phase 1: Create POC test script to verify Moltbot can start and serve UI",
-    "status": "completed"
+    "content": "Phase 3: Update backend with auth endpoints (/auth/session, /auth/me, /auth/logout)",
+    "status": "pending"
   },
   {
-    "content": "Phase 1: Implement reverse proxy (HTTP + WebSocket) in backend",
-    "status": "completed"
+    "content": "Phase 3: Make Moltbot config sticky to the user who configured it",
+    "status": "pending"
   },
   {
-    "content": "Phase 1: Verify POC - Moltbot UI loads through proxy",
-    "status": "completed"
+    "content": "Phase 3: Update frontend with login page and protected routes",
+    "status": "pending"
   },
   {
-    "content": "Phase 2: Build backend endpoints (start/status/stop)",
-    "status": "completed"
-  },
-  {
-    "content": "Phase 2: Build React setup page with provider selection",
-    "status": "completed"
-  },
-  {
-    "content": "Phase 2: End-to-end testing with Testing Agent",
-    "status": "completed"
-  },
-  {
-    "content": "Phase 2: All user stories covered in Development and testing",
-    "status": "completed"
+    "content": "Phase 3: Test auth flow end-to-end",
+    "status": "pending"
   }
 ]
