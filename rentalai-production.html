@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find your perfect rental in hours, not weeks. AI-powered rental assistant that saves you 70% of search time.">
+    <meta name="keywords" content="rental assistant, apartment search, AI rental, find apartment, rental help">
+    <title>RentalAI - Your AI Rental Assistant | Find Apartments 10x Faster</title>
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="RentalAI - Find Your Perfect Rental in Hours">
+    <meta property="og:description" content="AI-powered rental assistant that saves you 70% of search time">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rentalai.homes">
+    
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 24px;
+            padding: 60px 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .beta-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3);
+        }
+        
+        h1 {
+            font-size: 3.2rem;
+            color: #1a202c;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        p.subtitle {
+            font-size: 1.4rem;
+            color: #4a5568;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+            padding: 40px 0;
+            border-top: 2px solid #e2e8f0;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            color: #718096;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .problem-section {
+            text-align: left;
+            margin: 50px 0;
+            background: #f7fafc;
+            padding: 40px;
+            border-radius: 16px;
+        }
+        
+        .problem-section h2 {
+            font-size: 2rem;
+            color: #2d3748;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .problem-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .problem-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            font-size: 1.15rem;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+        
+        .problem-item::before {
+            content: "❌";
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-size: 1.3rem;
+        }
+        
+        .solution {
+            background: linear-gradient(135deg, #e6f7ff, #f0e6ff);
+            border-left: 5px solid #667eea;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: left;
+            border-radius: 12px;
+        }
+        
+        .solution h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .solution p {
+            color: #2d3748;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .cta {
+            margin-top: 50px;
+        }
+        
+        .chat-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .chat-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
+        }
+        
+        .chat-button:active {
+            transform: translateY(-1px);
+        }
+        
+        .cta-subtext {
+            margin-top: 20px;
+            color: #718096;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        .cta-subtext strong {
+            color: #2d3748;
+        }
+        
+        .footer-note {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #e2e8f0;
+            color: #718096;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        
+        .footer-note strong {
+            color: #667eea;
+            font-weight: 700;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 30px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            p.subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .stats {
+                gap: 20px;
+            }
+            
+            .stat-number {
+                font-size: 2.2rem;
+            }
+            
+            .problem-section {
+                padding: 30px 20px;
+            }
+            
+            .chat-button {
+                padding: 16px 40px;
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .beta-badge {
+                font-size: 0.8rem;
+                padding: 6px 16px;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .problem-item {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="beta-badge">🧪 BETA TEST - Free Access</div>
+        
+        <h1>Find Your Perfect Rental in <span class="highlight">Hours</span>, Not Weeks</h1>
+        
+        <p class="subtitle">AI-powered rental assistant that actually understands what you need</p>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">12-18</div>
+                <div class="stat-label">Hours Wasted<br>Searching</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">44%</div>
+                <div class="stat-label">Give Up &<br>Settle</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">5-10×</div>
+                <div class="stat-label">Repeat Same<br>Work</div>
+            </div>
+        </div>
+        
+        <div class="problem-section">
+            <h2>The Rental Search Nobody Talks About</h2>
+            <div class="problem-list">
+                <div class="problem-item">Spend 2-3 hours comparing listings manually</div>
+                <div class="problem-item">Wait 24-48 hours just to schedule a viewing</div>
+                <div class="problem-item">Upload same documents to every property</div>
+                <div class="problem-item">Apply and pray with zero feedback</div>
+                <div class="problem-item">No idea why you got rejected</div>
+            </div>
+        </div>
+        
+        <div class="solution">
+            <h3>✨ What if AI could handle all of this for you?</h3>
+            <p>That's exactly what we built. Chat with RentalAI to get personalized guidance, understand the process, and learn how to find your perfect place faster. We're in beta testing—your feedback shapes the future of rental search.</p>
+        </div>
+        
+        <div class="cta">
+            <button class="chat-button" onclick="startChat()">
+                💬 Chat with RentalAI Now
+            </button>
+            <p class="cta-subtext">
+                <strong>No signup required</strong> • Takes 2 minutes • Actually helpful
+            </p>
+        </div>
+        
+        <div class="footer-note">
+            <p><strong>We're in BETA.</strong> Help us build the future of rental search. Your feedback shapes the product. Early testers get lifetime discounts when we launch premium features.</p>
+        </div>
+    </div>
+    
+    <!-- 
+    ========================================
+    MOLTBOT WIDGET INTEGRATION
+    ========================================
+    
+    STEP 1: After MoltBot installation, you'll get an embed code.
+    
+    STEP 2: Add the MoltBot script tag here (before </body>):
+    
+    Example:
+    <script src="https://widget.emergent.sh/YOUR_BOT_ID.js"></script>
+    
+    STEP 3: Initialize MoltBot by adding:
+    
+    <script>
+      if (window.MoltBot) {
+        MoltBot.init({
+          botId: 'YOUR_BOT_ID',
+          apiKey: 'YOUR_API_KEY'
+        });
+      }
+    </script>
+    
+    STEP 4: Update the startChat() function below to open MoltBot
+    
+    ========================================
+    -->
+    
+    <script>
+        function startChat() {
+            // After MoltBot integration, replace this with:
+            // if (window.MoltBot) {
+            //     window.MoltBot.open();
+            // }
+            
+            // Temporary alert for testing before MoltBot is integrated
+            alert('🚀 Ready for MoltBot Integration!\n\n' +
+                  'Steps to complete:\n' +
+                  '1. Get your MoltBot embed code from Emergent dashboard\n' +
+                  '2. Add the script tag before </body>\n' +
+                  '3. Replace this function with MoltBot.open()\n\n' +
+                  'Check the HTML comments for detailed instructions!');
+        }
+    </script>
+    
+    <!-- Analytics (optional - add Google Analytics or PostHog here) -->
+</body>
+</html>
