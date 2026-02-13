@@ -27,6 +27,9 @@ def write_gateway_env(token: str, api_key: str = None, provider: str = "emergent
         provider: The provider name ("emergent", "anthropic", or "openai")
     """
     # Ensure directory exists
+    if os.environ.get("VERCEL"):
+        return
+
     os.makedirs(GATEWAY_ENV_DIR, exist_ok=True)
 
     # Build environment file content
@@ -58,5 +61,8 @@ def clear_gateway_env() -> None:
 
     Called when stopping the gateway to remove sensitive credentials.
     """
+    if os.environ.get("VERCEL"):
+        return
+
     if os.path.exists(GATEWAY_ENV_FILE):
         os.remove(GATEWAY_ENV_FILE)

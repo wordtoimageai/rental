@@ -1,0 +1,11 @@
+{
+    "name": "rental-app-monorepo",
+    "version": "1.0.0",
+    "scripts": {
+        "build": "cd frontend && npm install && npm run build",
+        "install-backend": "pip install -r backend/requirements.txt"
+    },
+    "engines": {
+        "node": "18.x"
+    }
+}
